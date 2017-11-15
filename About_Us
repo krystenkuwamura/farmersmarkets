@@ -1,4 +1,31 @@
-Anna
-Melanie
-Tasnuva
-Krysten
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>New Web Project</title>
+	</head>
+	<body>
+		<h1>About Us</h1>
+    <div id="anna">
+      <h2>Anna</h2>
+      <image src="mypicture.png">
+      <p> I am a MAG GIS student intersted in GIS modeling, green infrasture, stormwater management. </p>
+    </div>
+    <div id="tasnuva">
+      <h2>Tasnuva</h2>
+      <image src="mypicture.png">
+      <p>  </p>
+    </div>
+    <div id="melanie">
+      <h2>Melanie</h2>
+      <image src="mypicture.png">
+      <p>  </p>
+    </div>
+    <div id="krysten">
+      <h2>Krysten</h2>
+      <image src="mypicture.png">
+      <p> About Me: I was born and raised in Austin, Texas. I am a Geography: Resource and Environmental Studies major with a Geology minor. I will be graduating December, 2017 and will obtain two certificates: one in GIS and one in Location Analysis. I've been married for 3 years and recently had a son in June of this year named Kai. </p>
+    </div>
+	</body>
+</html>
