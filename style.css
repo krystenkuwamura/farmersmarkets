@@ -1,0 +1,167 @@
+/* Top navigation */
+.topNav {
+	overflow: hidden;
+	background-color: #333;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	height: 5%;
+	z-index: 5; /* slide over all groups*/
+}
+
+.topNav a {
+	float: left;
+	display: block;
+	color: #f2f2f2;
+	text-align: center;
+	padding: 14px;
+	text-decoration: none;
+}
+
+
+ /* Parallax base styles
+ --------------------------------------------- */
+.parallax {
+    height: 500px; /* fallback for older browsers */
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    -webkit-perspective: 300px;
+    perspective: 300px;
+  }
+
+.parallax__group {
+    position: relative;
+    height: 500px; /* fallback for older browsers */
+    height: 100vh;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+  }
+
+.parallax__layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+
+.parallax__layer--fore {
+    -webkit-transform: translateZ(90px) scale(.7);
+    transform: translateZ(90px) scale(.7);
+    z-index: 1;
+  }
+ 
+ .parallax__layer--base {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    z-index: 4;
+  }
+
+.parallax__layer--back {
+    -webkit-transform: translateZ(-300px) scale(2);
+    transform: translateZ(-300px) scale(2);
+    z-index: 3;
+  }
+
+.parallax__layer--deep {
+    -webkit-transform: translateZ(-600px) scale(3);
+    transform: translateZ(-600px) scale(3);
+    z-index: 2;
+  }
+
+/* demo styles
+  --------------------------------------------- */
+
+  body, html {
+    overflow: hidden;
+  }
+
+  body {
+    font: 100% / 1.5 Arial;
+    color: white;
+  }
+
+  * {
+    margin:0;
+    padding:0;
+  }
+
+  .parallax {
+    font-size: 200%;
+  }
+
+/* centre the content in the parallax layers */
+  .title {
+    text-align: center;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+
+
+/* style the groups
+  --------------------------------------------- */
+
+#group1 {
+    z-index: 5; /* slide over group 2 */
+  }
+#group1 .parallax__layer--base {
+    background-image: url("arrow.png");
+    background-size: 100%;
+  	background-repeat: no-repeat;
+  }
+
+#group2 {
+    z-index: 3; /* slide under groups 1 and 3 */
+  }
+#group2 .parallax__layer--back {
+    background-image: url("tomatoes2.png");
+    background-size: 100%;
+  	background-repeat: no-repeat;
+  }
+
+#group3 {
+	z-index: 4; /* slide over group 2 and 4 */
+  }
+#group3 .parallax__layer--base {
+    background-image: url("cabage2.png");
+    background-size: 100%;
+  	background-repeat: no-repeat;
+  }
+
+#group4 {
+    z-index: 2; /* slide under group 3 and 5 */
+  }
+#group4 .parallax__layer--deep {
+    background-image: url("tablewfood2.png");
+    background-size: 100%;
+  	background-repeat: no-repeat;
+  }
+
+#group5 {
+    z-index: 3; /* slide over group 7 */
+  }
+#group5 .parallax__layer--base {
+   background: black;
+   width: 100%;
+   height: 100%;
+   margin: 0;
+}  
+
+/* map container */
+
+/*html, body {
+	width: 100%;
+    height: 100%;
+    margin: 0;
+    overflow:hidden;
+}
+*/
+#borderContainer {
+	width: 100%;
+    height: 100%;
+    color: black;
+}
