@@ -35,7 +35,15 @@
 			outFields: ["*"]
 		});
 
-			map.addLayers([featureLayer]);		
+			map.addLayers([featureLayer]);
+		var basemapGallery = new BasemapGallery({
+			showArcGISBasemaps: true,
+			map:map
+		},"basemapGalleryDiv");
+		basemapGallery.startup();
+		basemapGallery.on("error",function(msg){
+		console.log("basemap gallery error", msg);
+		});
 });
 		</script>
 	</head>
