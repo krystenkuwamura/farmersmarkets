@@ -6,26 +6,56 @@
 		<title>New Web Project</title>
 	</head>
 	<body>
-		<h1>About Us</h1>
-    <div id="anna">
-      <h2>Anna</h2>
-      <image src="mypicture.png">
-      <p> I am a MAG GIS student intersted in GIS modeling, green infrasture, stormwater management. </p>
-    </div>
-    <div id="tasnuva">
-      <h2>Tasnuva</h2>
-      <image src="mypicture.png">
-      <p>  </p>
-    </div>
-    <div id="melanie">
-      <h2>Melanie</h2>
-      <image src="mypicture.png">
-      <p>  </p>
-    </div>
-    <div id="krysten">
-      <h2>Krysten</h2>
-      <image src="mypicture.png">
-      <p> About Me: I was born and raised in Austin, Texas. I am a Geography: Resource and Environmental Studies major with a Geology minor. I will be graduating December, 2017 and will obtain two certificates: one in GIS and one in Location Analysis. I've been married for 3 years and recently had a son in June of this year named Kai. </p>
-    </div>
+<body class="claro">
+  <div class="topNav">
+  	<a href="index.html">Home</a>
+  	<a href="aboutus.html">About Us</a>
+  	<a href="map">Map</a>
+</div>
+
+		<div id="aboutus">
+		<h1 class="AboutUs">About Us</h1>
+				
+
+     		<h2>Anna</h2>
+      			<img src="TexasState.JPG"/ class="AboutUsImg">
+      			<p>I am a MAG GIS student intersted in GIS modeling, green infrasture, stormwater management. </p>
+    	<br>
+    
+     
+	      	<h2>Tasnuva</h2>
+	      		<img src="TexasState.JPG"/ class="AboutUsImg">
+	      		<p>Tasnuva</p>
+	    <br>
+	    
+	
+	     	 <h2>Melanie</h2>
+	     		<img src="TexasState.JPG"/ class="AboutUsImg">
+	     	 	<p>I am a second year graduate student attending Texas State University. I have an Associate Degree in Liberal Arts and have also received a Bachelor of Science Degree in Geography, Resource and Environmental Studies with a Minor in Geology. Currently, I am pursuing a Master's Degree in Geographic Information Science. </p>
+	    <br>
+	    
+	      	<h2>Krysten</h2>
+	      		<img src="TexasState.JPG"/ class="AboutUsImg">
+	     		<p>I was born and raised in Austin, Texas. I am a Geography: Resource and Environmental Studies major with a Geology minor. I will be graduating December, 2017 and will obtain two certificates: one in GIS and one in Location Analysis. I've been married for 3 years and recently had a son in June of this year named Kai. </p>
+	    <br>
+	 
+	   <div id="footer">
+       <p class="footerinformation">
+            Copyright 2017       
+            <b>Group Name</b>    
+
+          <script>
+            var date = new Date(); 
+				var month = date.getMonth();
+				month = month + 1;
+				var day = date.getDate ();
+				var year = date.getFullYear ();
+				var hour = date.getHours ();
+				var minute = date.getMinutes ();
+					document.write(month, "-", day, "-", year, "/", hour, ":", minute);
+			          
+          </script> 	
+    	</div>  
+	</div>
 	</body>
 </html>
