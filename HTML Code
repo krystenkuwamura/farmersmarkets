@@ -13,7 +13,7 @@
 					center: [-97.911530, 29.890661],//City of San Marcos coordinates
 					zoom: 13,
 				});
-				var feautureLayer = new FeatureLayer("https://arcg.is/0ba4rb", {
+				var feautureLayer = new FeatureLayer("https://services8.arcgis.com/nlrn12w6Bsh0hi4J/arcgis/rest/services/FarmerMarkets/FeatureServer", {
 					mode: FeatureLayer.MODE_ONDEMAND,
 					outFields: [*]
 					});
