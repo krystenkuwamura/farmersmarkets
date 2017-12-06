@@ -37,7 +37,9 @@ require(["esri/map",
                 		FarmerMarkets.setDefinitionExpression("Day='Fri'");
             		} else if (dayChoice === 'saturday') {
                 		FarmerMarkets.setDefinitionExpression("Day='Sat'");
-            		}
+            		} else (dayChoice === 'all') {
+				FarmerMarkets.setDefinitionExpression("Day");
+			};
         		});
         		map.addLayer(FarmerMarkets);
         	});
