@@ -3,15 +3,18 @@
  */
 
 
-var date = new Date(); 
+function insertdate() { 
+	var date = new Date(); 
 	var month = date.getMonth();
 	month = month + 1;
 	var day = date.getDate ();
 	var year = date.getFullYear ();
 	var hour = date.getHours ();
 	var minute = date.getMinutes ();
-	var datestring = (month, "-", day, "-", year, "/", hour, ":", minute);
+	var datestring = month, "-", day, "-", year, "/", hour, ":", minute;
 		document.getElementById("date").innerHTML = datestring;       
+}	
+insertdate();
 	
 
 
