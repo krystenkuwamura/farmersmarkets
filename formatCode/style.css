@@ -115,6 +115,7 @@
 
 #group2 {
     z-index: 3; /* slide under groups 1 and 3 */
+    font-size: 25px;
   }
 #group2 .parallax__layer--back {
     background-image: url("tomatoes2.png");
@@ -124,6 +125,7 @@
 
 #group3 {
 	z-index: 4; /* slide over group 2 and 4 */
+   	font-size: 25px;
   }
 #group3 .parallax__layer--base {
     background-image: url("cabage2.png");
@@ -133,6 +135,7 @@
 
 #group4 {
     z-index: 2; /* slide under group 3 and 5 */
+    font-size: 25px;
   }
 #group4 .parallax__layer--deep {
     background-image: url("tablewfood2.png");
