@@ -1,0 +1,134 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html14/strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+
+<!-- GEO 5408 Project: Web Mapping,
+    Authors: Anna Essington, Krysten Kuwamura, Melanie Ratchford, Tasnuva Udita 
+    Date: 12.10.2017
+-->
+
+<head>
+    <!-- Linking html, css and java files 
+     Importing all the modules and themes -->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <title>Farmers Market, Central Texas</title>
+
+    <link type="text/css" rel="stylesheet" href='https://ajax.googleapis.com/ajax/libs/dojo/1.12.1/dijit/themes/claro/claro.css'>
+    <link rel="stylesheet" href="https://js.arcgis.com/3.22/esri/css/esri.css">
+    <style type="text/css">
+        html, body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            overflow:hidden;
+        }
+
+        #borderContainer {
+        	background-color: #DAA520;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+   	<link rel="stylesheet" href="styles.css">
+    <script>dojoConfig = {parseOnLoad: true, locale: 'en'}</script>
+   
+    
+    <script src="https://js.arcgis.com/3.22/"></script>
+	<script type="text/javascript" src="DropDown.js"></script>
+
+    
+</head>
+<!-- Defining the theme for the whole container -->
+<body class="claro">
+	<div data-dojo-type="dijit/layout/BorderContainer" data-dojo-props="design:'headline', gutters:true, liveSplitters:true" id="borderContainer">
+	    
+	    <!-- Defining the panel for the header section -->
+	    <div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="splitter:true, region:'top'" style="background-color: #556B2F; border:transparent">
+	    	
+			<div id="header">
+	            <h1>
+	                <center>Local Farmers' Markets in Central Texas</center>
+	            </h1>
+	
+	            <!-- DEfining the navigation bar -->
+	            <div class="navbar" id="navbar">
+	                <ul>
+	                    <li><a href='#'>Home</a></li>
+	                    <li><a href='#'>Map</a></li>
+	                    <li><a href='#'>About Us</a></li>
+	                    <li><a href='#'>Contact</a></li>
+	                </ul>
+	            </div>
+	        </div>
+	    </div>
+	    
+	    
+	    <div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="splitter:true, region:'leading'" style="height:80%;width:20%">
+	    	<div data-dojo-type="dijit/layout/TabContainer">
+
+	            <!-- Defining the basemap tab of the tool pane -->
+	            <div data-dojo-type="dijit/layout/ContentPane" title="Basemaps" style="background-color: #FFF8DC">
+	                <div id="basemapGalleryDiv"></div>
+	            </div>
+	
+	            <!-- Defining the day search tab of the tool pane -->
+	            <div data-dojo-type="dijit/layout/ContentPane" title="Search" selected="true" style="background-color: #FFF8DC">
+	                <div id="dayDiv" style="height: 100%">
+	                    <div id="query">
+	                        <p><strong>Select Any Day From The Drop Down Menu</strong></p>
+	                        <select id="daySelect">
+	                                    <option value="none">-Select a Day-</option>
+	                                    <option value="sunday">Sunday</option>
+	                                    <option value="monday">Monday</option>
+	                                    <option value="tuesday">Tuesday</option>
+	                                    <option value="wednesday">Wednesday</option>
+	                                    <option value="thursday">Thursday</option>
+	                                    <option value="friday">Friday</option>
+	                                    <option value="saturday">Saturday</option>
+							</select>
+	
+	                    </div>
+	                </div>
+	            </div>
+        	</div>
+	    </div>
+	    
+	    <!-- Defining the map container of the page -->
+	    <div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="splitter:true, region:'center'" style="height:100%">
+			<div id="mapDiv"></div>
+		</div>
+		
+	   	
+		<!-- Defining the footer information in the bottom panel -->
+	    <div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="splitter:true, region:'bottom'" style="height:5%">
+	    	<footer>
+	    	<ul class="footerinfo" id="footerinfo">
+          			<li>Copyright &copy 2017</li>
+          			<li>Team Parallax</li>
+          			<li>All Rights Reserved</li>
+      		</ul>
+	   		</footer>
+	   	</div>
+	   		
+	   	<script>
+	   		
+	   	//Set the footer information
+        var dateVal = new Date();
+
+		function addTimeInFooter() {
+		var dateString = dateVal.getMonth() + 1 + "-" + dateVal.getDate()+"-" + dateVal.getFullYear() + "/" + dateVal.getHours()+":"+dateVal.getMinutes(); 
+		var newElem = document.createElement('li');
+		newElem.appendChild(document.createTextNode(dateString));
+		document.getElementById("footerinfo").appendChild(newElem);
+		};
+		
+		addTimeInFooter();
+	   	</script>
+	   	
+	   	</div>
+	</div>
+	
+</body>
+</html>
+
