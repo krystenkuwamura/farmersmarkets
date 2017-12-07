@@ -170,9 +170,9 @@
 
 #map {
 	height: 100%;
-	    width: 100%;
-    margin: 0;
-    padding: 0;
+	width: 100%;
+   	margin: 0;
+    	padding: 0;
 }
 /* style the search widget
   --------------------------------------------- */
@@ -198,5 +198,4 @@
 .spotlight-active {
     z-index: 2;
     opacity: 1;
-}
 }
