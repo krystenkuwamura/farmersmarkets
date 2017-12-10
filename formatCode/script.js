@@ -60,3 +60,7 @@ require(["esri/map",
         		});
         		map.addLayer(FarmerMarkets);
         	});
+function alert() {
+    alert("Username: farmersmarkets Password: eatlocal1");
+}
+});
