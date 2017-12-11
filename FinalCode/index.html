@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html><head>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>Farmer's Markets</title>
+	<!-- link to stylesheet -->
+	<link rel="stylesheet" href="https://js.arcgis.com/3.22/dijit/themes/claro/claro.css">
+	<link rel="stylesheet" href="https://js.arcgis.com/3.22/esri/css/esri.css">
+	<link rel="stylesheet" href="style.css">
+
+	<!-- link to dojo formatting -->
+    <script>dojoConfig = {parseOnLoad: true}</script>	
+	<!-- link to esri arcgis javascript api -->
+    <script src="https://js.arcgis.com/3.22/"></script>
+    
+    <script>
+        require(["dojo/parser", "dijit/layout/ContentPane", "dijit/layout/BorderContainer"]);
+    </script>
+    <script type="text/javascript" src="script.js"></script>
+    
+</head>
+
+<body class="claro">
+	<!-- Define fixed navigation bar with 3 links -->
+  <div class="topNav">
+  	<a href="index.html">Home</a>
+  	<a href="About_Us.html">About Us</a>
+  	<a href="#map">Map</a>
+  </div>
+  <div class="parallax"> <!-- Set up parallax division -->
+  	
+  	<!-- Parallax group 1 -->
+    <div id="group1" class="parallax__group"> 
+    	<!-- group 1 base-->
+      <div class="parallax__layer parallax__layer--base"> 
+        <div class="title"> 
+        	<h1><b>Farmers' Markets</b></h1>
+        	<h2>From San Antonio to Austin</h2>
+        	<h3>Scroll to Continue</h3>
+        	</div>
+      </div>
+    </div>
+    
+    <!--Parallax group 2 -->
+    <div id="group2" class="parallax__group"> 
+    	<!-- group 2 base -->
+      <div class="parallax__layer parallax__layer--base"> 
+        <div class="title">
+        	<h1>Benefits of Farmer's Markets</h1>
+			- Eating locally-grown food helps to support local farmers, as well as the local economy.</br></br>
+        	- Local farmers’ markets provide healthy food grown in season.</br></br>
+			<i>The Pearl Farmers Market</i> in San Antonio offers a weekend market with an emphasis on artisanal and prepared foods. All 45+ vendors are located within a 150 mile radius and range from various farms to wineries to local suppliers. They also offer fun events that are family friendly and offer goods and services from local businesses. The market is held at the historic Brewhouse and they have a splash pad, live music and sometimes offer free yoga on the lawn. 
+			<br><a href="http://atpearl.com/farmers-market">Source: Visit the Pearl Farmers Market</a></br>
+        	</div>
+      </div>
+      <!-- group 2 backgroud -->
+      <div class="parallax__layer parallax__layer--back"> </div> 
+    </div>
+    
+    <!--Parallax group 3 -->
+    <div id="group3" class="parallax__group">
+    	<!-- group 3 foreground -->
+      <div class="parallax__layer parallax__layer--fore">
+        <div class="title">
+        	<h1>Local Farmer</h1>
+			<i>Johnson’s Backyard Garden</i> began in an urban backyard in East Austin by Brent and Beth Johnson. In 2004, the owners began to sell their produce at local Austin Farmers Markets. In 2006, they began a small community supported agriculture operation (CSA) and have recently expanded their practices to multiple other cities. Through this program, they deliver shares and offer community pickup sites. You can also volunteer on the farm for half a day in exchange for a share of veggies! They are USDA organic certified and are available almost every day of the week at various Farmers Markets around Austin and pop up shops. They also sell wholesale to numerous restaurants throughout the area and include recipes on their blog as well as a veggie seasonal chart. 
+			<br><a href="https://www.jbgorganic.com/thefarm">Source: Visit Johnson's Backyard Garden</a></br>
+        	</div>
+      </div>
+      <!-- group 3 background -->
+      <div class="parallax__layer parallax__layer--base"> </div>
+    </div>
+    
+    <!--Parallax group 4 -->
+    <div id="group4" class="parallax__group">
+    	<!-- group 4 base -->
+      <div class="parallax__layer parallax__layer--base">
+        <div class="title">
+        	<h1>Local Restaurant</h1>
+			<i>Tacodeli</i> is a local restaurant in Austin that proudly serves local and certified organic produce, meats and seafood. They are strong belivers in sustainable sourcing and use produce from a variety of farms all over Texas. You can find specifically where their food is sourced from located on their website. Tacodeli also supports fair trade cofee from Austin based Texas Coffee Traders which supports fair compensation to growers. Founder and Owner Roberto Espinosa opened Tacodeli in 1999. They serve award winning salsas and a variety of unique tacos!
+			<br><a href="https://www.tacodeli.com/">Source: Visit Tacodeli</a></br>
+        	</div>
+      </div>
+      <!-- group 4 middle-->
+      <div class="parallax__layer parallax__layer--back">
+        <div class="title"> </div>
+      </div>
+      <!-- group 4 background-->
+      <div class="parallax__layer parallax__layer--deep">
+        <div class="title"> </div>
+      </div>
+    </div>
+    
+    <!--Parallax group 5 -->
+    <div id="group5" class="parallax__group">
+      <div class="parallax__layer parallax__layer--base">
+      	<!-- Set border container for map and mapping components-->
+        <div data-dojo-type="dijit/layout/BorderContainer" data-dojo-props="design:'headline', gutters:true, liveSplitters:true" id="borderContainer">
+    		<!-- Defining the panel for the header section -->
+		    <div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="splitter:true, region:'top'" style="background-color: black; border:transparent">
+				<div id="header">
+		            <h1> <center>Local Farmers' Markets in Central Texas</center> </h1>
+    			</div>
+    		</div>
+    		<!-- left content pane-->
+    		<div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="splitter:true, region:'leading'" style="height:80%;width:20%">
+	    		<div data-dojo-type="dijit/layout/TabContainer">
+	    			<!-- basemap content pane within tab container-->
+	    			<div data-dojo-type="dijit/layout/ContentPane" title="Basemaps" style="background-color: white">
+		                <div id="basemapGalleryDiv"></div>
+		            </div>
+		            <!-- Defining the day search tab of the tool pane -->
+		            <div data-dojo-type="dijit/layout/ContentPane" title="Search" selected="true" style="background-color: white">
+		                <div id="dayDiv" style="height: 100%">
+		                    <div id="query">
+		                        <p><strong>Select Any Day From The Drop Down Menu</strong></p>
+		                        <select id="daySelect">
+		                                    <option value="none">-Select a Day-</option>
+		                                    <option value="all">All</option>
+		                                    <option value="sunday">Sunday</option>
+		                                    <option value="monday">Monday</option>
+		                                    <option value="tuesday">Tuesday</option>
+		                                    <option value="wednesday">Wednesday</option>
+		                                    <option value="thursday">Thursday</option>
+		                                    <option value="friday">Friday</option>
+		                                    <option value="saturday">Saturday</option>
+								</select>
+		                    </div>
+		                    <div style="padding:10px;" id="editorDiv"> </div>
+		                </div>
+		            </div>
+	    		</div>
+	    	</div>
+	 		<!-- Defining the map container of the page -->
+		    <div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="splitter:true, region:'center'" style="height:100%">
+    			<div id="search"> </div>
+    			<div id="map"> </div>
+    			<div id="copyright"> </div>
+    			
+    		</div>
+    		<!-- right content pane-->
+    		<div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="splitter:true, region:'trailing'" style="height:80%;width:20%">
+    			<div id="directions"> 
+				  <b>Find Drive Time or Distance</b>
+				  <br><br>Step 1: Click on a blue point. Then click and drag to move points to start and end locations. Do not move directly over another point. 
+				  <br><br> Step 2: Click anywhere on the map.
+				  <br><br> Step 3: Select measure type below.
+				  <br><br> Step 4: Click Run Analysis.
+				  <br><br> Step 5: Click on a point to see results.
+			  	</div>
+	        	<div id="toolPane">	</div>
+    		</div>
+    			
+    		<!-- Defining the footer information in the bottom panel -->
+		    <div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="splitter:true, region:'bottom'" style="background-color: black; height:5%">
+		    	<footer>
+		    	<ul class="footerinfo" id="footerinfo">
+	          			<li>Copyright &copy 2017</li>
+	          			<li>Team Parallax</li>
+	          			<li>All Rights Reserved</li>
+	      		</ul>
+		   		</footer>
+		   	</div>
+		   	<script>
+	   		
+		   	//Set the footer information
+	        var dateVal = new Date();
+			function addTimeInFooter() {
+			var dateString = dateVal.getMonth() + 1 + "-" + dateVal.getDate()+"-" + dateVal.getFullYear() + "/" + dateVal.getHours()+":"+dateVal.getMinutes(); 
+			var newElem = document.createElement('li');
+			newElem.appendChild(document.createTextNode(dateString));
+			document.getElementById("footerinfo").appendChild(newElem);
+			};
+			
+			addTimeInFooter();
+		   	</script>
+		</div>
+    </div>
+  </div>
+
+
+
+</body></html>
+
